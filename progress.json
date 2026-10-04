@@ -1,0 +1,217 @@
+{
+  "updated_at": "2026-10-04 21:50 UTC",
+  "scope": "Sanitized snapshot of dl_project run records; no live synchronization",
+  "runs": [
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T20:29:27.038675+00:00",
+      "ended_at": "2026-10-04T20:30:37.623044+00:00",
+      "method": "zipmap",
+      "source": "runs/exp004_zipmap_tum/20261004T202927Z_zipmap_tum_smoke_v1_0a268141"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T20:26:17.743924+00:00",
+      "ended_at": "2026-10-04T20:26:19.523905+00:00",
+      "method": "zipmap",
+      "source": "runs/exp004_zipmap_tum/20261004T202617Z_zipmap_tum_smoke_v1_c1b67636"
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T03:54:55.938741+00:00",
+      "ended_at": "2026-10-04T03:55:12.425027+00:00",
+      "method": "gae",
+      "source": "runs/exp003_gae_n3dv/20261004T035455Z_gae_n3dv_codec_v1_fe562a6f",
+      "summary": {
+        "views": 2,
+        "finite": true,
+        "initialization_seconds": 9.778223312998307,
+        "inference_seconds": 0.31067334600083996,
+        "peak_allocated_bytes": 8363566592,
+        "peak_reserved_bytes": 9342812160,
+        "precision": "bfloat16_autocast",
+        "timing_scope": "one cold view set; not a warmed latency benchmark",
+        "task": "observed-view RGB and geometry codec reconstruction",
+        "pointcloud_points": 165888
+      }
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T03:41:40.072914+00:00",
+      "ended_at": "2026-10-04T03:41:54.094284+00:00",
+      "method": "ttt3r",
+      "source": "runs/exp002_ttt3r_tum/20261004T034140Z_ttt3r_tum_smoke_v1_277f1252",
+      "summary": {
+        "frames": 32,
+        "finite": true,
+        "initialization_seconds": 3.6960873259959044,
+        "inference_seconds": 2.0366090630050167,
+        "peak_allocated_bytes": 6590651904,
+        "peak_reserved_bytes": 8036286464,
+        "precision": "float32",
+        "inference_api": "inference_recurrent_lighter",
+        "model_update_type": "ttt3r",
+        "timing_scope": "one cold sequence; not a warmed latency benchmark",
+        "geometry_units": "model gauge; not metric; no ground-truth alignment"
+      }
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T03:40:53.465900+00:00",
+      "ended_at": "2026-10-04T03:41:07.326924+00:00",
+      "method": "ttt3r",
+      "source": "runs/exp002_ttt3r_tum/20261004T034053Z_ttt3r_tum_smoke_v1_1da58046",
+      "summary": {
+        "frames": 32,
+        "finite": true,
+        "initialization_seconds": 3.648732580993965,
+        "inference_seconds": 1.925111972996092,
+        "peak_allocated_bytes": 4282678272,
+        "peak_reserved_bytes": 4607442944,
+        "precision": "float32",
+        "inference_api": "inference_recurrent",
+        "timing_scope": "one cold sequence; not a warmed latency benchmark",
+        "geometry_units": "model gauge; not metric; no ground-truth alignment"
+      }
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T03:40:03.230106+00:00",
+      "ended_at": "2026-10-04T03:40:17.068341+00:00",
+      "method": "cut3r",
+      "source": "runs/exp001_cut3r_tum/20261004T034003Z_cut3r_tum_smoke_v1_e3ffeff2",
+      "summary": {
+        "frames": 32,
+        "finite": true,
+        "initialization_seconds": 3.661293750999903,
+        "inference_seconds": 1.9318484089963022,
+        "peak_allocated_bytes": 4282678272,
+        "peak_reserved_bytes": 4607442944,
+        "precision": "float32",
+        "inference_api": "inference_recurrent",
+        "timing_scope": "one cold sequence; not a warmed latency benchmark",
+        "geometry_units": "model gauge; not metric; no ground-truth alignment"
+      }
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T03:38:09.543286+00:00",
+      "ended_at": "2026-10-04T03:38:16.927524+00:00",
+      "method": "cut3r",
+      "source": "runs/exp001_cut3r_tum/20261004T033809Z_cut3r_tum_smoke_v1_0a2f054b"
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T03:35:53.804654+00:00",
+      "ended_at": "2026-10-04T03:36:08.882721+00:00",
+      "method": "gae",
+      "source": "runs/exp003_gae_n3dv/20261004T033553Z_gae_n3dv_codec_v1_398d0ac3",
+      "summary": {
+        "views": 2,
+        "finite": true,
+        "initialization_seconds": 9.208010506998107,
+        "inference_seconds": 0.29307622399937827,
+        "peak_allocated_bytes": 8363566592,
+        "peak_reserved_bytes": 9342812160,
+        "precision": "bfloat16_autocast",
+        "timing_scope": "one cold view set; not a warmed latency benchmark",
+        "task": "observed-view RGB and geometry codec reconstruction"
+      }
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T03:35:39.806407+00:00",
+      "ended_at": "2026-10-04T03:35:47.112583+00:00",
+      "method": "ttt3r",
+      "source": "runs/exp002_ttt3r_tum/20261004T033539Z_ttt3r_tum_smoke_v1_f61a208a"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T03:35:27.397560+00:00",
+      "ended_at": "2026-10-04T03:35:34.985723+00:00",
+      "method": "cut3r",
+      "source": "runs/exp001_cut3r_tum/20261004T033527Z_cut3r_tum_smoke_v1_f102b96b"
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T03:25:41.204691+00:00",
+      "ended_at": "2026-10-04T03:25:56.801856+00:00",
+      "method": "gae",
+      "source": "runs/exp003_gae_n3dv/20261004T032541Z_gae_n3dv_codec_v1_9fbc0634",
+      "summary": {
+        "views": 2,
+        "finite": true,
+        "initialization_seconds": 9.339341760001844,
+        "inference_seconds": 0.5137023080023937,
+        "peak_allocated_bytes": 8363566592,
+        "peak_reserved_bytes": 9342812160,
+        "precision": "bfloat16_autocast",
+        "timing_scope": "one cold view set; not a warmed latency benchmark",
+        "task": "observed-view RGB and geometry codec reconstruction"
+      }
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T03:09:46.570036+00:00",
+      "ended_at": "2026-10-04T03:09:46.615624+00:00",
+      "method": "ttt3r",
+      "source": "runs/exp002_ttt3r_tum/20261004T030946Z_ttt3r_tum_smoke_v1_ae515ee1"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T03:09:46.560742+00:00",
+      "ended_at": "2026-10-04T03:09:46.611914+00:00",
+      "method": "cut3r",
+      "source": "runs/exp001_cut3r_tum/20261004T030946Z_cut3r_tum_smoke_v1_bedfbdd3"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T03:09:46.557277+00:00",
+      "ended_at": "2026-10-04T03:09:46.598091+00:00",
+      "method": "gae",
+      "source": "runs/exp003_gae_n3dv/20261004T030946Z_gae_n3dv_codec_v1_049ccd5c"
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T02:39:03.123219+00:00",
+      "ended_at": "2026-10-04T02:39:03.316306+00:00",
+      "method": "notebook",
+      "source": "runs/20261004T023903Z_notebook_04_compare_results_79096269"
+    },
+    {
+      "status": "completed",
+      "started_at": "2026-10-04T02:38:30.613314+00:00",
+      "ended_at": "2026-10-04T02:38:31.140192+00:00",
+      "method": "notebook",
+      "source": "runs/20261004T023830Z_notebook_00_inspect_inputs_1c377ecd"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T02:38:11.585042+00:00",
+      "ended_at": "2026-10-04T02:38:12.157643+00:00",
+      "method": "notebook",
+      "source": "runs/20261004T023811Z_notebook_00_inspect_inputs_ae6c7113"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T02:37:36.281186+00:00",
+      "ended_at": "2026-10-04T02:37:37.544502+00:00",
+      "method": "notebook",
+      "source": "runs/20261004T023736Z_notebook_00_inspect_inputs_9be12e88"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T02:36:23.173641+00:00",
+      "ended_at": "2026-10-04T02:36:23.215167+00:00",
+      "method": "cut3r",
+      "source": "runs/20261004T023623Z_cut3r_tum_smoke_v1_953a4167"
+    },
+    {
+      "status": "failed",
+      "started_at": "2026-10-04T02:36:23.066286+00:00",
+      "ended_at": "2026-10-04T02:36:23.096474+00:00",
+      "method": "notebook",
+      "source": "runs/20261004T023623Z_notebook_00_inspect_inputs_f49b843e"
+    }
+  ]
+}
