@@ -10,6 +10,7 @@ Expected GitHub Pages URL once deployed: https://normanisfine.github.io/dl_proje
 
 - `index.html`: research overview and chosen direction.
 - `experiments.html`: recorded results, reconstruction previews, and next gates.
+- `styles.css`: shared layout and typography.
 - `outputs/`: selected previews and sanitized experiment summaries.
 
 ## Publish

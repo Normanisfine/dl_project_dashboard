@@ -1,24 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Four reconstruction problems, representative research, and an efficiency-first direction for sparse-view dynamic reconstruction with imagination.">
-<title>SyncGeoMemory · Research overview</title><link rel="icon" href="favicon.svg">
-<style>
-:root{color-scheme:light;--ink:#142d38;--muted:#526975;--line:#d8e2e5;--green:#126d59;--bg:#f3f6f6}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif}a{color:var(--green);text-underline-offset:4px}header{background:#143a44;color:white;padding:24px 5vw}header h1{font-size:28px;margin:4px 0;letter-spacing:-.6px}header p{color:#c3d7dc;margin:6px 0}nav{display:flex;gap:24px;margin-top:20px;flex-wrap:wrap}nav a{color:#e3f2ef;text-decoration:none}nav a[aria-current]{border-bottom:2px solid #9de4c5}main{max-width:1250px;margin:auto;padding:28px 28px 55px}.eyebrow{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700}.intro{max-width:850px;margin-bottom:24px}.intro p{color:var(--muted)}h2{font-size:23px;letter-spacing:-.4px;margin:0 0 12px}h3{font-size:19px;line-height:1.4;margin:8px 0 12px}p{margin:8px 0 16px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.problem,.panel{background:white;border:1px solid var(--line);border-radius:10px;padding:24px}.problem .eyebrow{color:var(--muted)}.work{padding-top:12px;margin-top:12px;border-top:1px solid var(--line)}.work p{font-size:15px;margin:4px 0;color:var(--muted)}.work a{font-weight:650}.tag{display:inline-block;font-size:14px;background:#dff2e9;color:#155b44;padding:3px 10px;border-radius:5px}.selected{border:2px solid var(--green);background:#eef8f3;margin-top:28px;padding:28px;border-radius:10px}.selected h2{margin-top:10px}.selected .grid{margin-top:20px}.selected .work{border:0;margin:0;padding:18px;background:white;border-radius:8px}.priorities{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.priorities span{background:#143a44;color:white;padding:7px 12px;border-radius:5px}.section{margin-top:30px}.tried{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tried h3{margin-top:0}.tried p{font-size:15px;color:var(--muted)}.button{display:inline-block;background:var(--green);color:white;padding:10px 16px;border-radius:6px;text-decoration:none;font-weight:650}.note,footer{font-size:14px;color:var(--muted)}footer{margin-top:30px}@media(max-width:760px){main{padding:22px 16px}.grid,.tried{grid-template-columns:1fr}.problem,.panel,.selected{padding:20px}header h1{font-size:24px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Reconstruction topics, chosen research direction, and current experiments.">
+  <title>SyncGeoMemory · Overview</title>
+  <link rel="icon" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><div class="eyebrow">dl_project / research notebook</div><h1>SyncGeoMemory · Research overview</h1><p>3D / 4D reconstruction: the problems, the direction, and current experiments</p><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Research overview</a><a href="experiments.html">Experiments &amp; progress</a><a href="#chosen">Chosen direction</a></nav></header>
+<header>
+  <a class="brand" href="index.html">SyncGeoMemory</a>
+  <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="experiments.html">Experiments</a></nav>
+</header>
 <main>
-<div class="intro"><h2>Four problems to orient the project</h2><p>Two choices organize the field: whether the scene is static or moving, and whether observations come from one camera or several. Static reconstruction estimates geometry; dynamic reconstruction also needs motion and consistency over time.</p></div>
-<div class="grid" aria-label="Four reconstruction problems">
-<article class="problem"><div class="eyebrow">Problem 1-1 · Static / one camera</div><h3>Monocular static scene online reconstruction</h3><p>Build and update a 3D scene as frames arrive from a moving camera. The challenge is to retain useful geometry over a long sequence without drift or ever-growing compute.</p><div class="work"><a href="https://github.com/CUT3R/CUT3R" target="_blank" rel="noopener noreferrer">CUT3R · Official code</a><p>A continuous 3D perception model with persistent state: a starting point for geometry memory.</p></div><div class="work"><a href="https://github.com/Inception3D/TTT3R" target="_blank" rel="noopener noreferrer">TTT3R · Official code</a><p>A state-update rule designed to improve CUT3R’s length generalization.</p></div></article>
-<article class="problem"><div class="eyebrow">Problem 1-2 · Static / multiple views</div><h3>Multi-view static scene online reconstruction</h3><p>Fuse images from several viewpoints into shared geometry. For online use, the question is how to integrate new camera observations efficiently.</p><div class="work"><a href="https://vgg-t.github.io/" target="_blank" rel="noopener noreferrer">VGGT · Project &amp; paper</a><p>A feed-forward model for predicting geometry, cameras, depth, and point tracks from multiple views.</p></div><div class="work"><a href="https://github.com/facebookresearch/fast3r" target="_blank" rel="noopener noreferrer">Fast3R · Official code</a><p>Joint reconstruction of many images in one forward pass. These are multi-view references; online memory is a further research question.</p></div></article>
-<article class="problem"><div class="eyebrow">Problem 2-1 · Dynamic / one camera</div><h3>Single-view dynamic scene reconstruction</h3><p>Recover changing geometry from a monocular video while separating scene motion from camera motion. Point tracking and temporal consistency matter because the same surface changes position over time.</p><div class="work"><a href="https://www.robots.ox.ac.uk/~vgg/research/vdpm/" target="_blank" rel="noopener noreferrer">V-DPM · Project, paper &amp; code</a><p>Dynamic point maps extend video reconstruction to both geometry and 3D motion, building on VGGT.</p></div></article>
-<article class="problem"><div class="eyebrow">Problem 2-2 · Dynamic / multiple cameras</div><h3>Multi-view dynamic scene reconstruction</h3><p>Combine camera views across time to reconstruct a moving scene. The challenge is to keep geometry, motion, and visibility consistent across both viewpoints and timestamps.</p><div class="work"><a href="https://arxiv.org/abs/2506.18890" target="_blank" rel="noopener noreferrer">4D-LRM · Paper</a><p>A space-time reconstruction model for novel views and times from monocular or multi-view input.</p></div><div class="work"><a href="https://github.com/xiaomi-research/dggt" target="_blank" rel="noopener noreferrer">DGGT · Official code &amp; project</a><p>Feed-forward dynamic driving-scene reconstruction from sparse, unposed images, including motion and camera prediction.</p></div></article>
-</div>
-<section class="selected" id="chosen"><span class="tag">Chosen direction · Problem 3</span><h2>Sparse-view dynamic scene reconstruction with imagination</h2><p><strong>I want to reconstruct moving scenes from only a few camera views, using pretrained generative priors to imagine missing viewpoints and unseen content.</strong> This builds on the multi-view dynamic problem above, with much less observed evidence.</p><div class="priorities" aria-label="Research priorities"><span>Less training</span><span>Greater efficiency</span><span>Consistent geometry &amp; motion</span></div><p>The main priority is to reuse pretrained models, minimize new training and per-scene optimization, and keep inference time and memory costs low. A possible route is frozen backbones, a small query decoder, and bounded geometry memory. This is a proposed direction, not a demonstrated result.</p><div class="grid"><div class="work"><a href="https://diffuman4d.github.io/" target="_blank" rel="noopener noreferrer">Diffuman4D · Imagination reference</a><p>Spatio-temporal diffusion generates consistent human views from sparse-view videos. It illustrates how a generative prior can fill missing observations.</p></div><div class="work"><a href="https://github.com/zhenliuZJU/Forge4D" target="_blank" rel="noopener noreferrer">Forge4D · Efficiency reference</a><p>Feed-forward human reconstruction and interpolation from uncalibrated sparse videos, without per-scene optimization.</p></div></div><p class="note" style="margin-top:18px">Both references focus on humans; extending their ideas to general dynamic scenes remains an open question. Evaluate imagined views against held-out cameras and check geometry separately from image quality.</p></section>
-<section class="section" id="tried"><h2>What I have tried so far</h2><p>The current SyncGeoMemory experiments test building blocks for efficient reconstruction and memory. They are initial smoke tests, not yet a sparse-view imagination pipeline.</p><div class="tried"><article class="panel"><h3>CUT3R</h3><span class="tag">Recorded smoke test</span><p>TUM sequence inference with finite outputs and a saved reconstruction preview.</p><a href="experiments.html#results">Results &amp; timing</a> · <a href="outputs/cut3r-reconstruction.png">Preview</a></article><article class="panel"><h3>TTT3R</h3><span class="tag">Recorded smoke test</span><p>TUM recurrent inference with finite outputs. The progress page distinguishes the tested update/API variants.</p><a href="experiments.html#results">Results &amp; timing</a> · <a href="outputs/ttt3r-reconstruction.png">Preview</a></article><article class="panel"><h3>GAE</h3><span class="tag">Recorded codec test</span><p>N3DV observed-view geometry encoding and reconstruction. Held-out-view prediction remains to be tested.</p><a href="experiments.html#results">Results &amp; timing</a> · <a href="outputs/gae-reconstruction.png">Preview</a></article></div><p style="margin-top:20px"><a class="button" href="experiments.html">Open experiments &amp; progress</a></p><p class="note">Next: compare pretrained baselines, test a small held-out query decoder, then investigate bounded memory and generative completion. <a href="experiments.html#plan">See the next acceptance gates</a>.</p></section>
-<footer>Problem map based on <code>notes/init.txt</code>. Problem 2-2 follows the multi-camera branch in the notes’ diagram. Linked works are representative starting points, not claims of completed reproductions. Current evidence is a manually refreshed snapshot.</footer>
-</main></body></html>
+  <h1>3D / 4D reconstruction</h1>
+  <p class="lead">Four problems, organized by scene motion and camera setup. Bold papers are my reading priorities.</p>
+  <div class="problems" aria-label="Four reconstruction problems">
+    <article class="problem">
+      <span class="number">1-1</span>
+      <div><h3>Static · Single camera</h3><p>Online reconstruction from a moving camera.</p>
+        <div class="paper-group"><span class="paper-label">Focus</span><ul class="papers primary"><li data-paper="CUT3R"><a href="https://github.com/CUT3R/CUT3R">CUT3R</a></li><li data-paper="TTT3R"><a href="https://github.com/Inception3D/TTT3R">TTT3R</a></li></ul></div>
+      </div>
+    </article>
+    <article class="problem">
+      <span class="number">1-2</span>
+      <div><h3>Static · Multiple views</h3><p>Shared geometry across viewpoints; extend to online updates.</p>
+        <div class="paper-group"><span class="paper-label">Focus</span><ul class="papers primary"><li data-paper="VGGT"><a href="https://vgg-t.github.io/">VGGT</a></li><li data-paper="ZipMap"><a href="https://github.com/Haian-Jin/ZipMap">ZipMap</a></li></ul></div><div class="paper-group"><span class="paper-label">Start here</span><ul class="papers secondary"><li data-paper="Fast3R"><a href="https://github.com/facebookresearch/fast3r">Fast3R</a></li></ul></div><div class="paper-group"><span class="paper-label">Also read</span><ul class="papers secondary"><li data-paper="VGGT-Ω">VGGT-Ω</li><li data-paper="Pi3X">Pi3X</li><li data-paper="MUSt3R">MUSt3R</li><li data-paper="DA3">DA3</li><li data-paper="MapAnything">MapAnything</li><li data-paper="DéjàView">DéjàView</li><li data-paper="FLARE">FLARE</li></ul></div>
+      </div>
+    </article>
+    <article class="problem">
+      <span class="number">2-1</span>
+      <div><h3>Dynamic · Single camera</h3><p>Geometry and motion from video, consistent over time.</p>
+        <div class="paper-group"><span class="paper-label">Focus</span><ul class="papers primary"><li data-paper="V-DPM"><a href="https://www.robots.ox.ac.uk/~vgg/research/vdpm/">V-DPM</a></li></ul></div><div class="paper-group"><span class="paper-label">Also read</span><ul class="papers secondary"><li data-paper="MoRe">MoRe</li><li data-paper="D4RT">D4RT</li><li data-paper="D²USt3R">D²USt3R</li><li data-paper="DynamicVGGT">DynamicVGGT</li><li data-paper="Any4D">Any4D</li></ul></div>
+      </div>
+    </article>
+    <article class="problem">
+      <span class="number">2-2</span>
+      <div><h3>Dynamic · Multiple cameras</h3><p>Moving scenes reconstructed across views and time.</p>
+        <div class="paper-group"><span class="paper-label">Start here</span><ul class="papers secondary"><li data-paper="4D-LRM"><a href="https://arxiv.org/abs/2506.18890">4D-LRM</a></li><li data-paper="DGGT"><a href="https://github.com/xiaomi-research/dggt">DGGT</a></li></ul></div><div class="paper-group"><span class="paper-label">Also read</span><ul class="papers secondary"><li data-paper="NoPo4D">NoPo4D</li><li data-paper="FSM">FSM</li><li data-paper="LiveStre4m">LiveStre4m</li><li data-paper="4C4D">4C4D</li><li data-paper="GC-4DGS">GC-4DGS</li><li data-paper="SyncTrack4D">SyncTrack4D</li><li data-paper="StreamSTGS">StreamSTGS</li><li data-paper="Swift4D">Swift4D</li><li data-paper="MEGA">MEGA</li><li data-paper="RD4DGS">RD4DGS</li><li data-paper="CC-4DGS">CC-4DGS</li><li data-paper="P-4DGS">P-4DGS</li></ul></div>
+      </div>
+    </article>
+  </div>
+  <section class="focus" id="chosen">
+    <p class="label">My direction · Problem 3</p>
+    <h2>Sparse-view dynamic scene reconstruction with imagination</h2>
+    <p>Use pretrained generative priors to fill missing views from a few cameras.</p>
+    <p class="priority">Less training. More efficiency.</p>
+    <p>I prefer state-based reconstruction: carry geometry forward in a persistent state. I want to make updates efficient, possibly using test-time training (TTT).</p>
+    <div class="paper-group"><span class="paper-label">Focus</span><ul class="papers primary"><li data-paper="Diffuman4D"><a href="https://diffuman4d.github.io/">Diffuman4D</a></li><li data-paper="Forge4D"><a href="https://github.com/zhenliuZJU/Forge4D">Forge4D</a></li></ul></div><div class="paper-group"><span class="paper-label">Efficiency &amp; memory</span><ul class="papers primary"><li data-paper="ZipMap"><a href="https://github.com/Haian-Jin/ZipMap">ZipMap</a></li><li data-paper="TTT3R"><a href="https://github.com/Inception3D/TTT3R">TTT3R</a></li></ul></div><div class="paper-group"><span class="paper-label">Also read</span><ul class="papers secondary"><li data-paper="SparseCam4D">SparseCam4D</li><li data-paper="DGGT"><a href="https://github.com/xiaomi-research/dggt">DGGT</a></li><li data-paper="4C4D">4C4D</li><li data-paper="FrameCrafter">FrameCrafter</li><li data-paper="ViewCrafter">ViewCrafter</li><li data-paper="Vista4D">Vista4D</li><li data-paper="Point4Cast">Point4Cast</li><li data-paper="Sparc4D">Sparc4D</li><li data-paper="Multi4D">Multi4D</li><li data-paper="GP-4DGS">GP-4DGS</li><li data-paper="FILT3R"><a href="https://github.com/jinotter3/FILT3R">FILT3R</a></li></ul></div>
+    <p class="muted" style="margin-top:12px">Diffuman4D and Forge4D focus on humans; general scenes remain to explore.</p>
+  </section>
+  <section id="tried">
+    <h2>Tried so far</h2>
+    <ul class="inline-list">
+      <li><a href="experiments.html#results">CUT3R &amp; TTT3R</a> — TUM sequence smoke tests.</li>
+      <li><a href="experiments.html#results">GAE</a> — N3DV observed-view codec test.</li>
+    </ul>
+    <p style="margin-top:18px"><a href="experiments.html">Results, previews &amp; next steps</a></p>
+  </section>
+</main>
+<footer>Research snapshot · October 2026</footer>
+</body>
+</html>
