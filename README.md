@@ -1,24 +1,11 @@
-# dl_project_dashboard
+# Physical Attribute Assignment for Reconstructed Indoor Scenes
 
-SyncGeoMemory research dashboard: four reconstruction problems, representative papers, the chosen sparse-view dynamic reconstruction with imagination direction, and recorded experiment results.
-
-The main priorities are less training and greater efficiency.
+Research progress on AI2-THOR FloorPlan209, AHa-3D reconstruction, VoMP furniture property estimation, and preliminary contact tests in Isaac Sim.
 
 ## Website
 
-Expected GitHub Pages URL once deployed: https://normanisfine.github.io/dl_project_dashboard/
+https://normanisfine.github.io/dl_project_dashboard/
 
-- `index.html`: research overview and chosen direction.
-- `experiments.html`: recorded results, reconstruction previews, and next gates.
-- `styles.css`: shared layout and typography.
-- `outputs/`: selected previews and sanitized experiment summaries.
+The report includes the original AI2-THOR source video, matched ground-truth/reconstruction views, a reconstruction fly-through, an Isaac screenshot, and laptop push trials with and without physics. It distinguishes simulator reference values, estimated furniture properties, and manually assigned laptop assumptions.
 
-## Publish
-
-Push this repository to `main`, then open the repository's **Settings → Pages** and select **GitHub Actions** as the source. The included workflow deploys the static dashboard on pushes to `main` and can also be run manually from the Actions tab.
-
-No build or dependency installation is required. Open `index.html` in a browser to preview locally. Internal datasets, checkpoints, and credentials are excluded.
-
-## Update
-
-Edit the HTML files or refresh selected experiment snapshots, then commit and push. GitHub Pages publishes the new snapshot; the dashboard does not start experiments or scan the source machine.
+Static HTML and selected media are in the repository root and `assets/`. The existing GitHub Actions workflow publishes pushes to `main`. No build step or dependencies are required. `experiments.html` redirects to the current experiment.
