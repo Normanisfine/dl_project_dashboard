@@ -1,0 +1,282 @@
+{
+  "experiment": "CA-1M 42897538 A2 coffee-table mesh pilot",
+  "date": "2026-10-28",
+  "source": "Evan material showcase; AHa-3D reconstruction, not SceneRig output",
+  "geometry": "Original reconstructed meshes; five separate plate bodies plus one tissue-box assembly; fixed coffee table",
+  "omitted": [
+    "glass bowl",
+    "snacks",
+    "rest of room"
+  ],
+  "methods": [
+    "uniform density 1000 kg/m^3",
+    "VoMP average density",
+    "VoMP spatial density"
+  ],
+  "results": [
+    {
+      "trial": "uniform_force",
+      "rest_pass": null,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 14.073281548917294,
+      "maximum_final_speed_mm_s": 0.6002560257911682,
+      "top_plate_displacement_mm": 14.069167897105217,
+      "maximum_abs_final_support_gap_mm": 0.01519168887031963
+    },
+    {
+      "trial": "uniform_rest",
+      "rest_pass": true,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 0.0003264680970005429,
+      "maximum_final_speed_mm_s": 0.583476445171982,
+      "top_plate_displacement_mm": 0.0,
+      "maximum_abs_final_support_gap_mm": 0.014943849567017331
+    },
+    {
+      "trial": "vomp_average_force",
+      "rest_pass": null,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 14.703893102705479,
+      "maximum_final_speed_mm_s": 0.602950865868479,
+      "top_plate_displacement_mm": 14.697038568556309,
+      "maximum_abs_final_support_gap_mm": 0.015166842070923892
+    },
+    {
+      "trial": "vomp_average_rest",
+      "rest_pass": true,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 0.0003039252476355614,
+      "maximum_final_speed_mm_s": 0.5787590052932501,
+      "top_plate_displacement_mm": 0.0001884864389012364,
+      "maximum_abs_final_support_gap_mm": 0.014943243181186894
+    },
+    {
+      "trial": "vomp_spatial_force",
+      "rest_pass": null,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 14.69456497579813,
+      "maximum_final_speed_mm_s": 0.6015049293637276,
+      "top_plate_displacement_mm": 14.68860637396574,
+      "maximum_abs_final_support_gap_mm": 0.015188574313818037
+    },
+    {
+      "trial": "vomp_spatial_force_friction0.5",
+      "rest_pass": null,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 44.54725980758667,
+      "maximum_final_speed_mm_s": 0.644533836748451,
+      "top_plate_displacement_mm": 44.545531272888184,
+      "maximum_abs_final_support_gap_mm": 0.017772592714182522
+    },
+    {
+      "trial": "vomp_spatial_force_friction1.5",
+      "rest_pass": null,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 0.0158553957589902,
+      "maximum_final_speed_mm_s": 0.5831593298353255,
+      "top_plate_displacement_mm": 0.00013328003944934608,
+      "maximum_abs_final_support_gap_mm": 0.014904343744959192
+    },
+    {
+      "trial": "vomp_spatial_rest",
+      "rest_pass": true,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 0.0003039252476355614,
+      "maximum_final_speed_mm_s": 0.5843740655109286,
+      "top_plate_displacement_mm": 5.9604644775390625e-05,
+      "maximum_abs_final_support_gap_mm": 0.014932649221255367
+    },
+    {
+      "trial": "vomp_spatial_rest_perturb1",
+      "rest_pass": true,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 0.00032098083124765253,
+      "maximum_final_speed_mm_s": 0.5193219985812902,
+      "top_plate_displacement_mm": 8.429369557916289e-05,
+      "maximum_abs_final_support_gap_mm": 0.022848301950206817
+    },
+    {
+      "trial": "vomp_spatial_rest_perturb2",
+      "rest_pass": true,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 0.00055275074828387,
+      "maximum_final_speed_mm_s": 0.5933773354627192,
+      "top_plate_displacement_mm": 8.429369557916289e-05,
+      "maximum_abs_final_support_gap_mm": 0.023743401272757758
+    },
+    {
+      "trial": "vomp_spatial_rest_perturb3",
+      "rest_pass": true,
+      "all_supported": true,
+      "maximum_post_2s_drift_mm": 0.00036256091107134125,
+      "maximum_final_speed_mm_s": 0.5022344994358718,
+      "top_plate_displacement_mm": 0.00013328003944934608,
+      "maximum_abs_final_support_gap_mm": 0.023157594036482543
+    }
+  ],
+  "properties": {
+    "coffee_table": {
+      "mass_kg": 22.61909354229262,
+      "mean_density_kg_m3": 955.1979806319916,
+      "dynamic": false
+    },
+    "tissue_box": {
+      "mass_kg": 3.129024183282729,
+      "mean_density_kg_m3": 1016.683136543954,
+      "dynamic": true
+    },
+    "plate_0": {
+      "mass_kg": 0.3874660379916907,
+      "mean_density_kg_m3": 985.5530836160154,
+      "dynamic": true
+    },
+    "plate_1": {
+      "mass_kg": 0.3874660379916907,
+      "mean_density_kg_m3": 985.5530836160154,
+      "dynamic": true
+    },
+    "plate_2": {
+      "mass_kg": 0.3874660379916907,
+      "mean_density_kg_m3": 985.5530836160154,
+      "dynamic": true
+    },
+    "plate_3": {
+      "mass_kg": 0.3874683474714489,
+      "mean_density_kg_m3": 985.5530836160153,
+      "dynamic": true
+    },
+    "plate_4": {
+      "mass_kg": 0.3874660379916907,
+      "mean_density_kg_m3": 985.5530836160154,
+      "dynamic": true
+    }
+  },
+  "protocol": {
+    "seconds": 10,
+    "hz": 240,
+    "rest_after_s": 2,
+    "max_drift_m": 0.002,
+    "max_rotation_deg": 2,
+    "final_second_max_speed_m_s": 0.001,
+    "final_support_clearance_m": 0.002,
+    "static_friction": 0.6,
+    "dynamic_friction": 0.4,
+    "restitution": 0,
+    "force_N": 3,
+    "force_duration_s": 0.0625,
+    "force_target": "plate_4",
+    "perturbations": "Three seeds; each prop shifts XY up to 1 mm and raises 1 mm before initialization"
+  },
+  "limitations": [
+    "No measured physical ground truth",
+    "Uniform baseline density is an explicit 1000 kg/m^3 assumption",
+    "Table is static in these trials; predicted table inertia is not exercised",
+    "Tissue box reconstructed as a solid; mass is likely unrealistic",
+    "Tissue VoMP field capped at 32768 predicted voxels from 52601 occupied voxels; nearest-field mesh integration",
+    "Thin plates are reconstructed solid disks, not measured hollow dish geometry",
+    "Glass bowl and snacks excluded",
+    "VoMP elasticity fields stored, not used by rigid-body solver",
+    "Videos are Blender replays of recorded Isaac poses"
+  ],
+  "diagnostics": {
+    "diagnostic_v1_vomp_spatial_rest": {
+      "all_rest_pass": false,
+      "all_final_supported": true
+    },
+    "diagnostic_postreset_vomp_spatial_rest_perturb2": {
+      "all_rest_pass": false,
+      "all_final_supported": false
+    },
+    "diagnostic_postreset_vomp_spatial_rest_perturb1": {
+      "all_rest_pass": false,
+      "all_final_supported": false
+    },
+    "diagnostic_postreset_vomp_spatial_rest_perturb3": {
+      "all_rest_pass": false,
+      "all_final_supported": false
+    }
+  },
+  "validation": {
+    "trials": {
+      "vomp_spatial_rest": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "uniform_rest": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_spatial_rest_perturb2": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_average_rest": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_spatial_rest_perturb1": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_spatial_force_friction1.5": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_spatial_force_friction0.5": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_spatial_rest_perturb3": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "uniform_force": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_spatial_force": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      },
+      "vomp_average_force": {
+        "loaded_mass_com_inertia_verified": true,
+        "report_present": true,
+        "trajectory_present": true
+      }
+    },
+    "videos": {
+      "vomp_spatial_rest": {
+        "frames_decoded": 100,
+        "fps": 10.0,
+        "duration_s": 10.0,
+        "size": [
+          640,
+          640
+        ],
+        "provenance": "Blender CPU replay of actual Isaac Lab trajectories, not an Isaac camera recording"
+      },
+      "vomp_spatial_force": {
+        "frames_decoded": 100,
+        "fps": 10.0,
+        "duration_s": 10.0,
+        "size": [
+          640,
+          640
+        ],
+        "provenance": "Blender CPU replay of actual Isaac Lab trajectories, not an Isaac camera recording"
+      }
+    },
+    "original_scene_verified_against_zip": true
+  },
+  "conclusion": "All selected rest conditions pass; baselines also pass. No demonstrated stability advantage or real-world physical accuracy."
+}
